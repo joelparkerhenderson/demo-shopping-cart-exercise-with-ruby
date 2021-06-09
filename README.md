@@ -24,7 +24,7 @@ The domain driven design:
 
 * Offer: this calculates and is purely functional i.e. it evaluates each discount, if it applies, and for what amount.
 
-* Checkout: this does I/O. This is a service i.e. it inputs, creates a cart, sends its items to the till, and outputs.
+* Checkout: this is a command line interface i.e. it inputs, creates a cart, sends its items to the till, and outputs.
 
 Implementation preferences:
 
