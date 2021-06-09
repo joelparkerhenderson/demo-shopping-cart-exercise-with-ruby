@@ -178,10 +178,6 @@ class Shop
 
 Run `rake` and it succeeds.
 
-```sh
-rake
-```
-
 
 ## Requirement: a cart
 
@@ -522,11 +518,7 @@ def self.total_cost(items)
 end
 ```
 
-Run `rake` and it should succeed for the new `Till` tests, but fail for the existing `Till` test `test_total_cost_*` because we haven't updated it:
-
-```sh
-rake
-```
+Run `rake` and it should succeed for the new `Till` tests, but fail for the existing `Till` test `test_total_cost_*` because we haven't updated it.
 
 **TDD:** Edit `test_till.rb` and replace the test `test_total_cost_*` with a method `test_subtotal_cost_*`:
 
@@ -538,10 +530,6 @@ end
 ```
 
 Run `rake` and it fails as planned.
-
-```sh
-rake
-```
 
 **Implement:** Edit `till.rb` and update the method `total_cost` and create the method `subtotal_cost`:
 
