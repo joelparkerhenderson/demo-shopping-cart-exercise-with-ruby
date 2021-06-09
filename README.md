@@ -86,7 +86,7 @@ touch lib/shop.rb
 touch test/test_shop.rb
 ```
 
-TDD: Edit `test_shop.rb` and create a test for a new method `item_cost`:
+**TDD:** Edit `test_shop.rb` and create a test for a new method `item_cost`:
 
 ```ruby
 class TestShop < Minitest::Test
@@ -101,7 +101,7 @@ end
 
 Run `rake` and it fails as planned.
 
-Implement: Edit `shop.rb` and create a class `Shop` with the data of items and costs:
+**Implement:** Edit `shop.rb` and create a class `Shop` with the data of items and costs:
 
 ```ruby
 class Shop
@@ -136,7 +136,7 @@ Notes:
 
 ## Requirement: the oranges cost 25 cents
 
-TDD: Add oranges
+**TDD:** Add oranges
 
 ```ruby
 class TestShop < Minitest::Test
@@ -188,7 +188,7 @@ touch lib/cart.rb
 touch test/test_cart.rb
 ```
 
-TDD: Edit `test_cart.rb` and create a test for `initialize` that creates a cart that's empty:
+**TDD:** Edit `test_cart.rb` and create a test for `initialize` that creates a cart that's empty:
 
 ```ruby
 class TestCart < Minitest::Test
@@ -206,7 +206,7 @@ end
 
 Run `rake` and it fails as planned.
 
-Implement: Edit `cart.rb` and create a class that has an array of items that starts empty:
+**Implement:** Edit `cart.rb` and create a class that has an array of items that starts empty:
 
 ```ruby
 class Cart
@@ -231,7 +231,7 @@ Notes:
 
 ## Requirement: add items to the cart
 
-TDD: Create a method `add_items` that takes items:
+**TDD:** Create a method `add_items` that takes items:
 
 ```ruby
 class TestCart < Minitest::Test
@@ -246,7 +246,7 @@ class TestCart < Minitest::Test
 
 Run `rake` and it fails as planned.
 
-Implement: Add items and make it easy by using the Ruby splat operator to handle multiple items:
+**Implement:** Add items and make it easy by using the Ruby splat operator to handle multiple items:
 
 ```ruby
 class TestCart < Minitest::Test
@@ -269,7 +269,7 @@ touch lib/till.rb
 touch test/test_till.rb
 ```
 
-TDD: Edit `test_till.rb` and create a test for a new method `total_cost`:
+**TDD:** Edit `test_till.rb` and create a test for a new method `total_cost`:
 
 ```ruby
 class TestTill < Minitest::Test
@@ -283,7 +283,7 @@ class TestTill < Minitest::Test
 
 Run `rake` and it fails as planned.
 
-Implement: Edit `till.rb` and create the method:
+**Implement:** Edit `till.rb` and create the method:
 
 ```ruby
 class Till
@@ -321,7 +321,7 @@ touch lib/checkout.rb
 touch test/test_checkout.rb
 ```
 
-TDD: Edit `test_checkout.rb` that runs a command that outputs "Total cost TODO":
+**TDD:** Edit `test_checkout.rb` that runs a command that outputs "Total cost TODO":
 
 ```ruby
 require 'minitest/autorun'
@@ -338,7 +338,7 @@ end
 
 Run `rake` and it fails as planned.
 
-Implement: Create a file `./lib/checkout.rb` that runs the command:
+**Implement:** Create a file `./lib/checkout.rb` that runs the command:
 
 ```ruby
 #!/usr/bin/env ruby
@@ -355,7 +355,7 @@ chmod +x checkout.rb
 
 Run `rake` and it succeeds.
 
-TDD: Refine the test to make it output the total cost
+**TDD:** Refine the test to make it output the total cost
 
 ```ruby
 class TestCheckout < Minitest::Test
@@ -371,7 +371,7 @@ end
 
 Run `rake` and it fails as planned.
 
-Implement: Refine the checkout to output the total cost:
+**Implement:** Refine the checkout to output the total cost:
 
 ```sh
 require './lib/cart'
@@ -388,7 +388,7 @@ end
 
 Run `rake` and it succeeds.
 
-TDD: Refine the test to output the total cost also as dollars:
+**TDD:** Refine the test to output the total cost also as dollars:
 
 ```ruby
 class TestCheckout < Minitest::Test
@@ -404,7 +404,7 @@ end
 
 Run `rake` and it fails as planned.
 
-Implement: Refine the logic to output:
+**Implement:** Refine the logic to output:
 
 ```ruby
 if __FILE__ == $PROGRAM_NAME
@@ -452,7 +452,7 @@ touch test/test_offer.rb
 
 We recognize that "Buy one get one free" is equivalent to "2 for the price of 1". Thus both offers are "X for the price of Y", so we'll code it that way.
 
-TDD: Edit `test_offer.rb` and add tests for a new method `x_for_price_of_y`. 
+**TDD:** Edit `test_offer.rb` and add tests for a new method `x_for_price_of_y`. 
 
 * We want an assertion for each kind of offer when it's included in the total cost i.e. when the offer is applicable thus the method returns a discount.
 
@@ -493,7 +493,7 @@ end
 
 Run `rake` and it fails as planned.
 
-Implement: Edit `offer.rb` and create the method `x_for_price_of_y`:
+**Implement:** Edit `offer.rb` and create the method `x_for_price_of_y`:
 
 ```ruby
 class Offer
@@ -508,7 +508,7 @@ end
 Run `rake` and it should succeed for `Offer.x_for_price_of_y` but fail for `Till.total_cost` because we haven't updated it.
 
 
-TDD: Edit `test_till.rb` and update `test_total_cost_*` with new offer tests that test the combination of both offers:
+**TDD:** Edit `test_till.rb` and update `test_total_cost_*` with new offer tests that test the combination of both offers:
 
 ```ruby
 def test_total_cost_with_2_for_1_apples_include_and_3_for_2_oranges_include
@@ -524,7 +524,7 @@ end
 
 Run `rake` and it fails as planned.
 
-Implement: Edit `till.rb` and add the offers: 
+**Implement:** Edit `till.rb` and add the offers: 
 
 ```ruby
 def self.total_cost(items)
@@ -540,7 +540,7 @@ Run `rake` and it should succeed for the new `Till` tests, but fail for the exis
 rake
 ```
 
-TDD: Edit `test_till.rb` and replace the test `test_total_cost_*` with a method `test_subtotal_cost_*`:
+**TDD:** Edit `test_till.rb` and replace the test `test_total_cost_*` with a method `test_subtotal_cost_*`:
 
 ```ruby
 def test_subtotal_cost_with_example_list
@@ -555,7 +555,7 @@ Run `rake` and it fails as planned.
 rake
 ```
 
-Implement: Edit `till.rb` and update the method `total_cost` and create the method `subtotal_cost`:
+**Implement:** Edit `till.rb` and update the method `total_cost` and create the method `subtotal_cost`:
 
 ```ruby
 def self.subtotal_cost(items)
@@ -565,7 +565,7 @@ end
 
 Run `rake` and it succeeds.
 
-Refactor: Edit `till.rb` to use the new method `subtotal_cost`:
+**Refactor:** Edit `till.rb` to use the new method `subtotal_cost`:
 
 ```ruby
 def self.total_cost(items)
@@ -599,7 +599,7 @@ Update your checkout functions accordingly.
 
 ## Requirement: Add bananas that cost 20 cents
 
-TDD: Edit `test_shop.rb` and add:
+**TDD:** Edit `test_shop.rb` and add:
 
 ```ruby
 def test_item_cost_with_banana
@@ -610,7 +610,7 @@ end
 
 Run `rake` and it fails as planned.
 
-Implement: Edit `shop.rb` and add lines for the banana:
+**Implement:** Edit `shop.rb` and add lines for the banana:
 
 ```ruby
 items: {
@@ -631,7 +631,7 @@ Run `rake` and it succeeds.
 
 ## Requirement: Add bananas offer of buy one get one free
 
-TDD: Edit `test_offer.rb` and add tests for `x_for_price_of_y_with_2_for_1_bananas` that are akin to the tests for apples and oranges:
+**TDD:** Edit `test_offer.rb` and add tests for `x_for_price_of_y_with_2_for_1_bananas` that are akin to the tests for apples and oranges:
 
 ```ruby
 def test_x_for_price_of_y_with_2_for_1_bananas_include
@@ -647,7 +647,7 @@ end
 
 Run `rake` and it should succeed for the new tests because the implementation method already exists, but fail for the outdated tests `Till.total_cost_*`.
 
-TDD: Edit `test_till.rb` and update the methods `test_total_cost_*` to:
+**TDD:** Edit `test_till.rb` and update the methods `test_total_cost_*` to:
 
 ```ruby
 def test_total_cost_with_2_for_1_apples_exclude_and_2_for_1_bananas_exclude_and_3_for_2_oranges_exclude
@@ -661,7 +661,7 @@ def test_total_cost_with_2_for_1_apples_include_and_2_for_1_bananas_include_and_
 end
 ```
 
-Implement: Edit `till.rb` and add one line for the new offer:
+**Implement:** Edit `till.rb` and add one line for the new offer:
 
 ```ruby
 def self.total_cost(items)
@@ -677,7 +677,7 @@ Run `rake` and it succeeds.
 
 ## Requirement: The cheapest item should be given free first
 
-TDD: Edit `test_till.rb` and add a test:
+**TDD:** Edit `test_till.rb` and add a test:
 
 ```ruby
 def test_total_cost_with_cheapest_item_free
@@ -688,7 +688,7 @@ end
 
 Run `rake` and it fails as planned.
 
-Implement: Edit `till.tb` and add a line that decides which item is free and which items are paid:
+**Implement:** Edit `till.tb` and add a line that decides which item is free and which items are paid:
 
 ```ruby
 def self.total_cost(items)
