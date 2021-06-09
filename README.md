@@ -79,7 +79,7 @@ task :default => :test
 
 ## Requirement: the apples cost 60 cents
 
-We need a shop that has items and costs, so create files:
+**Setup:** We want a shop that has item names and costs:
 
 ```sh
 touch lib/shop.rb
@@ -179,9 +179,9 @@ rake
 ```
 
 
-## Requirement: a cart that can hold items
+## Requirement: a cart
 
-We need a shop that has items and costs, so create files:
+**Setup:** We want a cart that can hold items:
 
 ```sh
 touch lib/cart.rb
@@ -262,7 +262,7 @@ Run `rake` and it succeeds.
 
 ## Requirement: calculate the total cost
 
-We need a till that calculates the cost of items, so create the files:
+**Setup:** We want a till that can calculate the total cost of items:
 
 ```sh
 touch lib/till.rb
@@ -304,17 +304,7 @@ Notes:
 
 ## Requirement: Build a checkout system which takes a cart of items scanned at the till and outputs the total cost
 
-We now have our pieces:
-
-* A class `Shop` that has the constant items and costs
-
-* A class `Cart` that holds the state of the user's items
-
-* A class `Till` that does functional calculation of the cost of a cart's items
-
-We now want:
-
-* A class `Checkout` that reads input, combines the pieces, and writes output:
+**Setup**: We want a checkout capability that reads input, calculates using the shop costs and cart items, and writes output:
 
 ```sh
 touch lib/checkout.rb
@@ -437,13 +427,7 @@ Update your checkout functions accordingly.
 
 ## Requirement: Add offers
 
-The shop decides to introduce two offers that provide a discount:
-
-* Buy one get one free on apples. 
-
-* 3 for the price of 2 on oranges.
-
-We want an offer of some kind, so create files:
+**Setup:** We want an offer that can decide if a discount applies, and if so, for how much:
 
 ```sh
 touch lib/offer.rb
