@@ -1,4 +1,4 @@
-# Demo of shoppping cart exercise with Ruby
+# Demo shoppping cart exercise with Ruby
 
 This is a programming exercise that creates a simple shopping cart program.
 
