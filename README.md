@@ -4,11 +4,11 @@ This is a programming exercise that creates a simple shopping cart program.
 
 The concept:
 
-* A shop sells apples, banana, oranges.
+* A shop sells apples, bananas, oranges.
 
-* A cart holds the user's items.
+* A cart holds a user's items.
 
-* A till calculates the cost of cart's items.
+* A till calculates the cost of a cart's items.
 
 * An offer is a potential discount such as buy one get one free.
 
@@ -16,21 +16,21 @@ The concept:
 
 The domain driven design:
 
-* Shop: this provides item names and costs. This is constant i.e. the exercise data never changes.
+* `Shop` provides item names and costs. This is constant i.e. the exercise data never changes.
 
-* Cart: this holds items. This is a stateful i.e. the cart can be empty or contain a variety of items.
+* `Cart` holds a user's items. This is a stateful i.e. the cart can be empty or contain a variety of items.
 
-* Till: this calculates and is purely functional i.e. it sums a total cost based on cart items, shop costs, and offers.
+* `Till` calculates and is purely functional i.e. it sums a total cost based on cart items, shop costs, and offers.
 
-* Offer: this calculates and is purely functional i.e. it evaluates each discount, if it applies, and for what amount.
+* `Offer` calculates and is purely functional i.e. it evaluates each discount, if it applies, and for what amount.
 
-* Checkout: this is a command line interface i.e. it inputs, creates a cart, sends its items to the till, and outputs.
+* `Checkout` is a command line interface i.e. it inputs, creates a cart, sends items to the till, and outputs.
 
 Implementation preferences:
 
-* We favor separation of functional code from stateful code. For example we separate the Till concept (which is functional) and the Cart concept (which is stateful).
+* We favor separation of functional code from stateful code. For example we separate the `Till` concept (which is functional) and the `Cart` concept (which is stateful).
 
-* We favor separation of domain concerns. For example we separate the Till concept (which focuses on the concern of tallying a total cost) and the Offer concept (which focuses on the concern of special-case discounts).
+* We favor separation of domain concerns. For example we separate the `Till` concept (which focuses on the concern of tallying a total cost) and the `Offer` concept (which focuses on the concern of special-case discounts).
 
 * We favor separation of files. For example we will create separate files `shop.rb`, `cart.rb`, `till.rb`, `offer.rb`, `checkout.rb`.
 
@@ -40,16 +40,16 @@ Testing preferences:
 
 * We favor test driven development (TDD) which writes a test and runs the test to prove it fails, then implements the logic and runs the test to prove it succeeds.
 
-* We favor Ruby Minitest test style with `assert()`, rather than Minitest spec style with `expect()`, because the test style tends to be faster to write and clearer to refactor as needed.
+* We favor Ruby Minitest test style with `assert()`, rather than Minitest spec style with `expect()`, because the test style tends to be faster to write, clearer to document, and more effective to refactor as needed.
 
 
 ## Exercise 1: Shopping cart
 
 Build a shopping cart checkout system for a shop that sells apples and oranges.
 
-* Apples cost 60 cents.
+* Apples cost 60 cents each.
 
-* Oranges cost 25 cents.
+* Oranges cost 25 cents each.
 
 Build a checkout system which takes a cart of items scanned at the till and outputs the total cost.
 
@@ -564,7 +564,7 @@ Notes:
 
 The shop adds bananas.
 
-* Bananas cost 20 cents.
+* Bananas cost 20 cents each.
 
 * Bananas are added to the same buy one get one free offer as apples.
 
