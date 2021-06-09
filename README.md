@@ -20,9 +20,9 @@ The domain driven design:
 
 * Cart: this holds items. This is a stateful i.e. the cart can be empty or contain a variety of items.
 
-* Till: this calculates and is functional i.e. it sums a total cost based on cart items, shop costs, and offers.
+* Till: this calculates and is purely functional i.e. it sums a total cost based on cart items, shop costs, and offers.
 
-* Offer: this calculates and is functional i.e. it evaluates each discount, if it applies, and for what amount.
+* Offer: this calculates and is purely functional i.e. it evaluates each discount, if it applies, and for what amount.
 
 * Checkout: this does I/O. This is a service i.e. it inputs, creates a cart, sends its items to the till, and outputs.
 
