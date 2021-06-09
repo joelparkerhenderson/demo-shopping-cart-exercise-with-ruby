@@ -18,7 +18,7 @@ The domain driven design:
 
 * Shop: this provides item names and costs. This is constant i.e. the exercise data never changes.
 
-* Cart: this holds items. This is a stateful i.e. the cart can be empty or contain items.
+* Cart: this holds items. This is a stateful i.e. the cart can be empty or contain a variety of items.
 
 * Till: this calculates and is functional i.e. it sums a total cost based on cart items, shop costs, and offers.
 
