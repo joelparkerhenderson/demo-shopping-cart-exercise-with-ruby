@@ -14,7 +14,7 @@ The concept:
 
 * A checkout program handles the input and output.
 
-The architecture:
+The domain driven design:
 
 * Shop: this provides item names and costs. This is constant i.e. the exercise data never changes.
 
