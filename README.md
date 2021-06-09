@@ -28,15 +28,19 @@ The domain driven design:
 
 Implementation preferences:
 
-* We favor separating functional code from stateful code. For example we separate the Cart (with functional code) and the Cart (with stateful code).
+* We favor separation of functional code from stateful code. For example we separate the Till concept (which is functional) and the Cart concept (which is stateful).
 
-* We favor writing files that have separation of concerns, rather than combining a bunch of stuff into one file. For example we separate the concepts of a Till (with the concern of tallying a total cost) and an Offer (with the concern of providing specialize logic such as buy one get one free).
+* We favor separation of domain concerns. For example we separate the Till concept (which focuses on the concern of tallying a total cost) and the Offer concept (which focuses on the concern of special-case discounts).
+
+* We favor separation of files. For example we will create separate files `shop.rb`, `cart.rb`, `till.rb`, `offer.rb`, `checkout.rb`.
 
 Testing preferences:
 
 * We favor readable test names that have plenty of detail, rather than test names that aren't as obvious.
 
 * We favor test driven development (TDD) which writes a test and runs the test to prove it fails, then implements the logic and runs the test to prove it succeeds.
+
+* We favor Ruby Minitest test style with `assert()`, rather than Minitest spec style with `expect()`, because the test style tends to be faster to write and clearer to refactor as needed.
 
 
 ## Exercise 1: Shopping cart
